@@ -1,5 +1,0 @@
-C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Shared\obj\Debug\net8.0\CleanArchitecture.Shared.csproj.AssemblyReference.cache
-C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Shared\obj\Debug\net8.0\CleanArchitecture.Shared.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Shared\obj\Debug\net8.0\CleanArchitecture.Shared.AssemblyInfoInputs.cache
-C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Shared\obj\Debug\net8.0\CleanArchitecture.Shared.AssemblyInfo.cs
-C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Shared\obj\Debug\net8.0\CleanArchitecture.Shared.csproj.CoreCompileInputs.cache

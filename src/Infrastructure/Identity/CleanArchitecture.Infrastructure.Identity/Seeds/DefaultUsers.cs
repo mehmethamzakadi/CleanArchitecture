@@ -11,6 +11,7 @@ public static class DefaultUsers
 
         if (userManager.Users.All(u => u.Id != defaultUser.Id))
         {
+            ArgumentNullException.ThrowIfNull(defaultUser.Email);
             var user = await userManager.FindByEmailAsync(defaultUser.Email);
             if (user == null)
             {
