@@ -1,0 +1,242 @@
+{
+    "projectName": "CleanArchitecture.NET9",
+    "description": "Modern, ölçeklenebilir Clean Architecture prensiplerine dayalı .NET 9 backend projesi",
+    "version": "1.0.0",
+    "language": {
+        "primary": "csharp",
+        "version": "12.0",
+        "framework": ".NET 9",
+        "features": {
+            "nullable": true,
+            "fileScoped": true,
+            "recordStructs": true,
+            "requiredMembers": true
+        }
+    },
+    "architecture": {
+        "pattern": "Clean Architecture",
+        "principles": [
+            "DDD",
+            "CQRS",
+            "SOLID",
+            "DRY",
+            "KISS",
+            "YAGNI"
+        ],
+        "boundaries": {
+            "enforceLayerIsolation": true,
+            "strictDependencyFlow": true,
+            "preventCyclicDependencies": true
+        }
+    },
+    "structure": {
+        "rootDir": "src",
+        "layers": {
+            "core": {
+                "path": "Core",
+                "subfolders": {
+                    "domain": [
+                        "Entities",
+                        "ValueObjects",
+                        "Events",
+                        "Services",
+                        "Interfaces",
+                        "Specifications",
+                        "Exceptions",
+                        "Enums"
+                    ],
+                    "application": [
+                        "Features"
+                    ]
+                }
+            },
+            "infrastructure": {
+                "path": "Infrastructure",
+                "subfolders": [
+                    "Persistence",
+                    "Identity",
+                    "Cache",
+                    "Services",
+                    "BackgroundJobs",
+                    "Email"
+                ]
+            },
+            "presentation": {
+                "path": "Presentation/API",
+                "subfolders": [
+                    "Controllers",
+                    "Middleware",
+                    "Models",
+                    "Filters",
+                    "Extensions"
+                ]
+            },
+            "tests": {
+                "path": "Tests",
+                "subfolders": [
+                    "Unit",
+                    "Integration",
+                    "Performance",
+                    "Architecture",
+                    "Security"
+                ]
+            },
+            "shared": {
+                "path": "Shared",
+                "subfolders": [
+                    "Constants",
+                    "Extensions",
+                    "Utilities",
+                    "Configuration"
+                ]
+            }
+        }
+    },
+    "conventions": {
+        "naming": {
+            "entities": "PascalCase",
+            "interfaces": "IPascalCase",
+            "commands": "VerbNounCommand",
+            "queries": "NounQuery",
+            "controllers": "PascalCaseController",
+            "tests": "ClassNameTests",
+            "exceptions": "PascalCaseException",
+            "handlers": "EntityNameCommandHandler",
+            "validators": "EntityNameValidator",
+            "specifications": "EntityNameSpecification"
+        },
+        "formatting": {
+            "indentation": "spaces",
+            "indentSize": 4,
+            "maxLineLength": 120,
+            "lineEnding": "lf"
+        },
+        "documentation": {
+            "requireXmlComments": true,
+            "requireReadme": true,
+            "enforceCommitFormat": true
+        }
+    },
+    "dependencies": {
+        "primary": [
+            "Microsoft.AspNetCore.App",
+            "Microsoft.EntityFrameworkCore",
+            "MediatR",
+            "Mapster",
+            "FluentValidation"
+        ],
+        "infrastructure": [
+            "Npgsql.EntityFrameworkCore.PostgreSQL",
+            "StackExchange.Redis",
+            "MongoDB.Driver",
+            "Serilog",
+            "MassTransit",
+            "Quartz",
+            "Azure.Storage.Blobs",
+            "MailKit"
+        ],
+        "security": [
+            "IdentityServer4",
+            "Microsoft.AspNetCore.Authentication.JwtBearer",
+            "Microsoft.AspNetCore.Identity",
+            "NWebsec.AspNetCore.Middleware"
+        ],
+        "testing": [
+            "xunit",
+            "Moq",
+            "FluentAssertions",
+            "Bogus",
+            "NetArchTest",
+            "WebSurge"
+        ],
+        "monitoring": [
+            "OpenTelemetry",
+            "Prometheus.Client",
+            "Grafana.Agent"
+        ]
+    },
+    "documentation": {
+        "swagger": {
+            "enabled": true,
+            "version": "v1",
+            "title": "Clean Architecture API",
+            "security": true
+        },
+        "xmlComments": true,
+        "architectureDecisions": "docs/adr",
+        "technicalGuides": "docs/guides",
+        "postman": "docs/postman",
+        "diagrams": "docs/diagrams"
+    },
+    "cursorAI": {
+        "suggestions": {
+            "enabled": true,
+            "patterns": [
+                "Repository",
+                "UnitOfWork",
+                "Mediator",
+                "Decorator",
+                "Specification",
+                "Factory",
+                "Strategy"
+            ]
+        },
+        "analysis": {
+            "cleanArchitecture": true,
+            "dddPrinciples": true,
+            "cqrsPatterns": true,
+            "dependencyFlow": "insideOut",
+            "securityVulnerabilities": true,
+            "performancePatterns": true
+        },
+        "completion": {
+            "entityFramework": true,
+            "mediatr": true,
+            "fluentValidation": true,
+            "customSnippets": true
+        },
+        "contextAwareness": {
+            "depth": 4,
+            "layerBoundaries": true,
+            "dependencyInversion": true,
+            "domainRules": true
+        }
+    },
+    "devops": {
+        "docker": {
+            "enabled": true,
+            "containerization": "multi-stage",
+            "baseImage": "mcr.microsoft.com/dotnet/aspnet:9.0-alpine"
+        },
+        "kubernetes": {
+            "enabled": true,
+            "orchestration": true,
+            "monitoring": true,
+            "scaling": true
+        },
+        "cicd": {
+            "provider": "GitHub Actions",
+            "stages": [
+                "build",
+                "test",
+                "security-scan",
+                "deploy"
+            ]
+        }
+    },
+    "security": {
+        "scanning": {
+            "enabled": true,
+            "tools": [
+                "SonarQube",
+                "OWASP ZAP",
+                "Snyk"
+            ]
+        },
+        "compliance": {
+            "gdpr": true,
+            "hipaa": false,
+            "pci": false
+        }
+    }
+}

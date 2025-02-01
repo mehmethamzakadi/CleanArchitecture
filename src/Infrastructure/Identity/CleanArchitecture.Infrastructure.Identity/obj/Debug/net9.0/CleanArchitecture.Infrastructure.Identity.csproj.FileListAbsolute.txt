@@ -1,0 +1,17 @@
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\bin\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.deps.json
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\bin\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.dll
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\bin\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.pdb
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\bin\Debug\net9.0\CleanArchitecture.Application.dll
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\bin\Debug\net9.0\CleanArchitecture.Domain.dll
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\bin\Debug\net9.0\CleanArchitecture.Application.pdb
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\bin\Debug\net9.0\CleanArchitecture.Domain.pdb
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.csproj.AssemblyReference.cache
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.AssemblyInfoInputs.cache
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.AssemblyInfo.cs
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.csproj.CoreCompileInputs.cache
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\CleanArc.0D031AD7.Up2Date
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.dll
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\refint\CleanArchitecture.Infrastructure.Identity.dll
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\CleanArchitecture.Infrastructure.Identity.pdb
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Infrastructure\Identity\CleanArchitecture.Infrastructure.Identity\obj\Debug\net9.0\ref\CleanArchitecture.Infrastructure.Identity.dll

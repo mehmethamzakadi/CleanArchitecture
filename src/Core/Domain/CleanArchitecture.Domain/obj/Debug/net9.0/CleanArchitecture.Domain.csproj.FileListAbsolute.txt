@@ -1,0 +1,12 @@
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\bin\Debug\net9.0\CleanArchitecture.Domain.deps.json
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\bin\Debug\net9.0\CleanArchitecture.Domain.dll
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\bin\Debug\net9.0\CleanArchitecture.Domain.pdb
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.csproj.AssemblyReference.cache
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.AssemblyInfoInputs.cache
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.AssemblyInfo.cs
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.csproj.CoreCompileInputs.cache
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.dll
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\refint\CleanArchitecture.Domain.dll
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\CleanArchitecture.Domain.pdb
+C:\Users\mehme\OneDrive\Masaüstü\Calismalarim\CleanArchitecture\src\Core\Domain\CleanArchitecture.Domain\obj\Debug\net9.0\ref\CleanArchitecture.Domain.dll

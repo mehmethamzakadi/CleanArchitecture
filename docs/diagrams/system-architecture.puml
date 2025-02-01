@@ -1,0 +1,48 @@
+@startuml Clean Architecture System Design
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/C4-PlantUML/master/C4_Container.puml
+
+LAYOUT_WITH_LEGEND()
+
+title Clean Architecture System Design
+
+Person(client, "Client", "Web tarayıcı veya mobil uygulama")
+
+System_Boundary(c1, "Clean Architecture") {
+    Container(api, "API Gateway", ".NET 9, ASP.NET Core", "REST API endpoints, authentication, rate limiting")
+    
+    Container(application, "Application Layer", ".NET 9", "Use cases, business rules, CQRS handlers")
+    Container(domain, "Domain Layer", ".NET 9", "Entities, value objects, domain events")
+    
+    Container(identity, "Identity Service", ".NET Identity", "Authentication, authorization")
+    Container(persistence, "Persistence", "EF Core, PostgreSQL", "Data access, migrations")
+    Container(cache, "Cache", "Redis", "Distributed caching")
+    Container(messagebus, "Message Bus", "MassTransit, RabbitMQ", "Event handling")
+    
+    Container(storage, "Storage", "Azure Blob", "File storage")
+    Container(email, "Email Service", "SMTP", "Email notifications")
+}
+
+System_Ext(monitoring, "Monitoring", "Application metrics, logs, traces")
+System_Ext(logging, "Logging", "Structured logging with Serilog")
+
+Rel(client, api, "Uses", "HTTPS/REST")
+
+Rel(api, application, "Uses")
+Rel(application, domain, "Uses")
+
+Rel(application, identity, "Uses")
+Rel(application, persistence, "Uses")
+Rel(application, cache, "Uses")
+Rel(application, messagebus, "Publishes/Subscribes")
+
+Rel(persistence, domain, "Uses")
+Rel(identity, domain, "Uses")
+
+Rel(api, monitoring, "Metrics")
+Rel(api, logging, "Logs")
+
+Rel(application, storage, "Uses")
+Rel(application, email, "Uses")
+
+@enduml 
