@@ -16,31 +16,32 @@ public class RefreshTokenConfiguration : IEntityTypeConfiguration<RefreshToken>
             .IsRequired()
             .HasMaxLength(256);
 
-        builder.Property(x => x.Email)
-            .IsRequired()
-            .HasMaxLength(256);
-
-        builder.Property(x => x.Password)
-            .IsRequired()
-            .HasMaxLength(256);
-
         builder.Property(x => x.ExpiryDate)
+            .IsRequired();
+
+        builder.Property(x => x.CreatedDate)
             .IsRequired();
 
         builder.Property(x => x.CreatedByIp)
             .IsRequired()
             .HasMaxLength(256);
 
+        builder.Property(x => x.RevokedDate)
+            .IsRequired(false);
+
         builder.Property(x => x.RevokedByIp)
             .HasMaxLength(256);
 
-        builder.Property(x => x.JwtId)
-            .IsRequired()
+        builder.Property(x => x.ReplacedByToken)
             .HasMaxLength(256);
+
+        builder.Property(x => x.UserId)
+            .IsRequired()
+            .HasMaxLength(450);
 
         builder.HasIndex(x => x.Token)
             .IsUnique();
 
-        builder.HasIndex(x => x.Email);
+        builder.HasIndex(x => x.UserId);
     }
 } 

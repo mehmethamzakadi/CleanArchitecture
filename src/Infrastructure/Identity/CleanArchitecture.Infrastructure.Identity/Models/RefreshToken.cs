@@ -1,6 +1,6 @@
 using System;
 
-namespace CleanArchitecture.Domain.Entities
+namespace CleanArchitecture.Infrastructure.Identity.Models
 {
     public class RefreshToken
     {
@@ -16,5 +16,6 @@ namespace CleanArchitecture.Domain.Entities
         public bool IsActive => RevokedDate == null && !IsExpired;
         
         public required string UserId { get; set; }
+        public required ApplicationUser User { get; set; }
     }
 } 

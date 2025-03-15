@@ -15,17 +15,6 @@ public class ApplicationDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<RefreshToken>(entity =>
-        {
-            entity.HasKey(e => e.Id);
-            entity.Property(e => e.Token).IsRequired();
-            entity.Property(e => e.Email).IsRequired();
-            entity.Property(e => e.Password).IsRequired();
-            entity.Property(e => e.ExpiryDate).IsRequired();
-            entity.Property(e => e.CreatedByIp).IsRequired();
-            entity.Property(e => e.JwtId).IsRequired();
-        });
-
         base.OnModelCreating(modelBuilder);
 
         foreach (var entityType in modelBuilder.Model.GetEntityTypes())

@@ -23,7 +23,7 @@ public class TokenService : ITokenService
     public (string JwtToken, string RefreshToken) GenerateTokens(string userId, string email, IList<string> roles, string ipAddress)
     {
         var jwtToken = GenerateJwtToken(userId, email, roles);
-        var refreshToken = GenerateRefreshToken(email, ipAddress, jwtToken);
+        var refreshToken = GenerateRefreshToken(userId, ipAddress, jwtToken);
 
         return (jwtToken, refreshToken);
     }
@@ -54,24 +54,25 @@ public class TokenService : ITokenService
         return new JwtSecurityTokenHandler().WriteToken(token);
     }
 
-    private string GenerateRefreshToken(string email, string ipAddress, string jwtToken)
+    private string GenerateRefreshToken(string userId, string ipAddress, string jwtToken)
     {
         var randomNumber = new byte[32];
         using var rng = RandomNumberGenerator.Create();
         rng.GetBytes(randomNumber);
-        var refreshToken = Convert.ToBase64String(randomNumber);
+        var refreshTokenString = Convert.ToBase64String(randomNumber);
 
-        var token = RefreshToken.Create(
-            refreshToken,
-            email,
-            "",
-            DateTime.UtcNow.AddDays(7),
-            ipAddress,
-            GetJwtId(jwtToken));
+        var token = new RefreshToken
+        {
+            Token = refreshTokenString,
+            ExpiryDate = DateTime.UtcNow.AddDays(7),
+            CreatedByIp = ipAddress,
+            CreatedDate = DateTime.UtcNow,
+            UserId = userId
+        };
 
         _refreshTokenRepository.AddAsync(token);
 
-        return refreshToken;
+        return refreshTokenString;
     }
 
     private string GetJwtId(string token)
@@ -137,11 +138,10 @@ public class TokenService : ITokenService
             throw new InvalidOperationException("Token is not active");
 
         // Generate new tokens
-        var (newJwtToken, newRefreshToken) = GenerateTokens(refreshTokenEntity.Email, refreshTokenEntity.Email, new List<string>(), ipAddress);
+        var (newJwtToken, newRefreshToken) = GenerateTokens(refreshTokenEntity.UserId, "", new List<string>(), ipAddress);
 
-        // Mark old refresh token as used
-        refreshTokenEntity.UseToken();
-        await _refreshTokenRepository.DeleteAsync(refreshToken);
+        // Delete old refresh token
+        await _refreshTokenRepository.DeleteAsync(refreshTokenEntity);
 
         return (newJwtToken, newRefreshToken);
     }
@@ -156,7 +156,7 @@ public class TokenService : ITokenService
         if (!refreshTokenEntity.IsActive)
             throw new InvalidOperationException("Token is not active");
 
-        refreshTokenEntity.RevokeToken(ipAddress);
-        await _refreshTokenRepository.DeleteAsync(refreshToken);
+        // Delete the refresh token
+        await _refreshTokenRepository.DeleteAsync(refreshTokenEntity);
     }
 } 

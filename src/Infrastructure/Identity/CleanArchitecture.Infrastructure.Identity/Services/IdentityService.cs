@@ -10,15 +10,18 @@ public class IdentityService : IIdentityService
     private readonly UserManager<ApplicationUser> _userManager;
     private readonly SignInManager<ApplicationUser> _signInManager;
     private readonly ITokenService _tokenService;
+    private readonly IRefreshTokenRepository _refreshTokenRepository;
 
     public IdentityService(
         UserManager<ApplicationUser> userManager,
         SignInManager<ApplicationUser> signInManager,
-        ITokenService tokenService)
+        ITokenService tokenService,
+        IRefreshTokenRepository refreshTokenRepository)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _tokenService = tokenService;
+        _refreshTokenRepository = refreshTokenRepository;
     }
 
     public async Task<AuthResponse> RegisterAsync(RegisterRequest request)
@@ -65,6 +68,28 @@ public class IdentityService : IIdentityService
             Email = user.Email!,
             Token = jwtToken,
             RefreshToken = refreshToken
+        };
+    }
+
+    public async Task<AuthResponse> RefreshTokenAsync(string userId, string refreshToken)
+    {
+        var user = await _userManager.FindByIdAsync(userId);
+        if (user == null)
+            throw new Exception("User not found");
+
+        var existingRefreshToken = await _refreshTokenRepository.GetByTokenAsync(refreshToken);
+        if (existingRefreshToken == null || !existingRefreshToken.IsActive)
+            throw new Exception("Invalid refresh token");
+
+        var roles = await _userManager.GetRolesAsync(user);
+        var (newJwtToken, newRefreshToken) = _tokenService.GenerateTokens(user.Id, user.Email!, roles, refreshToken);
+
+        return new AuthResponse
+        {
+            UserId = user.Id,
+            Email = user.Email!,
+            Token = newJwtToken,
+            RefreshToken = newRefreshToken
         };
     }
 

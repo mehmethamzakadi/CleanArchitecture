@@ -22,9 +22,13 @@ public class RefreshTokenCommandHandler : IRequestHandler<RefreshTokenCommand, A
         if (refreshToken == null)
             throw new Exception("Refresh token bulunamadı.");
 
-        if (refreshToken.ExpiryDate < DateTime.UtcNow)
+        if (!refreshToken.IsActive)
+            throw new Exception("Refresh token aktif değil.");
+
+        if (refreshToken.IsExpired)
             throw new Exception("Refresh token süresi dolmuş.");
 
-        return await _identityService.LoginAsync(refreshToken.Email, refreshToken.Password);
+        // Kullanıcıyı al ve yeni token oluştur
+        return await _identityService.RefreshTokenAsync(refreshToken.UserId, request.RefreshToken);
     }
 } 
